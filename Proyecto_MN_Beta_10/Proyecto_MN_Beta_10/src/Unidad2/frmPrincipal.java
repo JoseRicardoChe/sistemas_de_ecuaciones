@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Unidad2;
 
-import Unidad2.dlgBiseccion;
-import javax.swing.JOptionPane;
-
+import Unidad3.dlgFijo;
+import Unidad3.dlgJacobi;
 
  
 public class frmPrincipal extends javax.swing.JFrame {
@@ -28,7 +22,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem1 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
         mnbPestanas = new javax.swing.JMenuBar();
         mnOpciones = new javax.swing.JMenu();
@@ -36,10 +29,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         smnuNewton = new javax.swing.JMenuItem();
         smnuSecante = new javax.swing.JMenuItem();
         smnuBiseccion = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        menujacobi = new javax.swing.JMenuItem();
-
-        jMenuItem1.setText("jMenuItem1");
+        mnOpcionesEcu = new javax.swing.JMenu();
+        jmiJacobbi = new javax.swing.JMenuItem();
+        jmiPuntoFijo = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,17 +79,28 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         mnbPestanas.add(mnOpciones);
 
-        jMenu1.setText("Sistemas de ecuaciones");
+        mnOpcionesEcu.setText("Sistemas de Ecuaciones");
 
-        menujacobi.setText("jacobi");
-        menujacobi.addActionListener(new java.awt.event.ActionListener() {
+        jmiJacobbi.setText("Jacobbi");
+        jmiJacobbi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menujacobiActionPerformed(evt);
+                jmiJacobbiActionPerformed(evt);
             }
         });
-        jMenu1.add(menujacobi);
+        mnOpcionesEcu.add(jmiJacobbi);
 
-        mnbPestanas.add(jMenu1);
+        jmiPuntoFijo.setText("Punto Fijo");
+        jmiPuntoFijo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiPuntoFijoActionPerformed(evt);
+            }
+        });
+        mnOpcionesEcu.add(jmiPuntoFijo);
+
+        jMenuItem3.setText("jMenuItem3");
+        mnOpcionesEcu.add(jMenuItem3);
+
+        mnbPestanas.add(mnOpcionesEcu);
 
         setJMenuBar(mnbPestanas);
 
@@ -121,7 +125,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void smnuBiseccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnuBiseccionActionPerformed
-        // TODO add your handling code here:
+
         dlgBiseccion biseccion = new dlgBiseccion(this,true);
         biseccion.setLocationRelativeTo(null);
         biseccion.setVisible(true);
@@ -129,7 +133,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_smnuBiseccionActionPerformed
 
     private void smnuPuntoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnuPuntoFijoActionPerformed
-        dlgPunto punto = new dlgPunto(this,true);
+        dlgFijo punto = new dlgFijo(this,true);
         punto.setLocationRelativeTo(null);
         punto.setVisible(true);
     }//GEN-LAST:event_smnuPuntoFijoActionPerformed
@@ -150,10 +154,17 @@ public class frmPrincipal extends javax.swing.JFrame {
           System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void menujacobiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menujacobiActionPerformed
-        dlgJacobi e = new dlgJacobi();
-        e.setVisible(true);
-    }//GEN-LAST:event_menujacobiActionPerformed
+    private void jmiJacobbiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiJacobbiActionPerformed
+        dlgJacobi x = new dlgJacobi();
+        x.setLocationRelativeTo(null);
+        x.setVisible(true);
+    }//GEN-LAST:event_jmiJacobbiActionPerformed
+
+    private void jmiPuntoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPuntoFijoActionPerformed
+        dlgFijo y = new dlgFijo(this,true);
+        y.setLocationRelativeTo(null);
+        y.setVisible(true);
+    }//GEN-LAST:event_jmiPuntoFijoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,10 +204,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem menujacobi;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jmiJacobbi;
+    private javax.swing.JMenuItem jmiPuntoFijo;
     private javax.swing.JMenu mnOpciones;
+    private javax.swing.JMenu mnOpcionesEcu;
     private javax.swing.JMenuBar mnbPestanas;
     private javax.swing.JMenuItem smnuBiseccion;
     private javax.swing.JMenuItem smnuNewton;

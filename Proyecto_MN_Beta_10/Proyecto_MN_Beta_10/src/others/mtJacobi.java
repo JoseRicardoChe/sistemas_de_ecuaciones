@@ -1,27 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Unidad2;
+package others;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author jpool
- */
-public class mtSecante extends AbstractTableModel {
+public class mtJacobi extends AbstractTableModel {
 
-    private String[] columnas = {"Iteración", "Xi-1", "Xi", "F(Xi-1)", "(Xi-1)-(Xi)", "F(Xi)", "F(Xi)*[(Xi-1)-(Xi)]", "[F(Xi-1)]-[F(Xi)]", "Raiz", "Error"};
-    private ArrayList<csFilaSecante> lista;
+    private String[] columnas = {"K", "X1", "X2", "X3", "X4", "Error"};
+    private ArrayList<csFilaJacobi> lista;
 
-    public mtSecante(ArrayList<csFilaSecante> lista) {
+    public mtJacobi(ArrayList<csFilaJacobi> lista) {
         this.lista = lista;
     }
 
-    public mtSecante() {
+    public mtJacobi() {
+
     }
 
     @Override
@@ -41,25 +33,17 @@ public class mtSecante extends AbstractTableModel {
         // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         switch (columna) {
             case 0:
-                return this.lista.get(fila).getIt();
+                return this.lista.get(fila).getK();
             case 1:
-                return this.lista.get(fila).getA();
+                return this.lista.get(fila).getX1();
             case 2:
-                return this.lista.get(fila).getB();
+                return this.lista.get(fila).getX2();
             case 3:
-                return this.lista.get(fila).getC();
+                return this.lista.get(fila).getX3();
             case 4:
-                return this.lista.get(fila).getD();
+                return this.lista.get(fila).getX4();
             case 5:
                 return this.lista.get(fila).getE();
-            case 6:
-                return this.lista.get(fila).getF();
-            case 7:
-                return this.lista.get(fila).getG();
-            case 8:
-                return this.lista.get(fila).getH();
-            case 9:
-                return this.lista.get(fila).getI();
             default:
                 return null;
         }

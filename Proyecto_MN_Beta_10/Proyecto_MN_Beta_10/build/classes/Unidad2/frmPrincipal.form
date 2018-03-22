@@ -2,11 +2,6 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.JMenuItem" name="jMenuItem1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenuItem1"/>
-      </Properties>
-    </Component>
     <Menu class="javax.swing.JMenuBar" name="mnbPestanas">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="mnOpciones">
@@ -48,18 +43,31 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="mnOpcionesEcu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Sistemas de ecuaciones"/>
+            <Property name="text" type="java.lang.String" value="Sistemas de Ecuaciones"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menujacobi">
+            <MenuItem class="javax.swing.JMenuItem" name="jmiJacobbi">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jacobi"/>
+                <Property name="text" type="java.lang.String" value="Jacobbi"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menujacobiActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiJacobbiActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jmiPuntoFijo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Punto Fijo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiPuntoFijoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jMenuItem3"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
