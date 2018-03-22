@@ -1,6 +1,7 @@
 package Unidad2;
 
 import Unidad3.dlgFijo;
+import Unidad3.dlgGaussSeidel;
 import Unidad3.dlgJacobi;
 
  
@@ -32,7 +33,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         mnOpcionesEcu = new javax.swing.JMenu();
         jmiJacobbi = new javax.swing.JMenuItem();
         jmiPuntoFijo = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        Gauss = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,8 +98,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
         mnOpcionesEcu.add(jmiPuntoFijo);
 
-        jMenuItem3.setText("jMenuItem3");
-        mnOpcionesEcu.add(jMenuItem3);
+        Gauss.setText("Gauss-Seidel");
+        Gauss.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GaussActionPerformed(evt);
+            }
+        });
+        mnOpcionesEcu.add(Gauss);
 
         mnbPestanas.add(mnOpcionesEcu);
 
@@ -166,6 +172,12 @@ public class frmPrincipal extends javax.swing.JFrame {
         y.setVisible(true);
     }//GEN-LAST:event_jmiPuntoFijoActionPerformed
 
+    private void GaussActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GaussActionPerformed
+    dlgGaussSeidel y = new dlgGaussSeidel();
+        y.setLocationRelativeTo(null);
+        y.setVisible(true);
+    }//GEN-LAST:event_GaussActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -203,8 +215,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Gauss;
     private javax.swing.JButton jButton1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jmiJacobbi;
     private javax.swing.JMenuItem jmiPuntoFijo;
     private javax.swing.JMenu mnOpciones;

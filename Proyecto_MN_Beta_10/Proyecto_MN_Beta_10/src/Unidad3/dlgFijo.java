@@ -42,6 +42,7 @@ public class dlgFijo extends javax.swing.JDialog {
 
         lbError.setText("Error");
 
+        txtX1.setText("0");
         txtX1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtX1ActionPerformed(evt);
@@ -53,6 +54,7 @@ public class dlgFijo extends javax.swing.JDialog {
             }
         });
 
+        txtError.setText("0.001");
         txtError.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtErrorActionPerformed(evt);
@@ -78,6 +80,7 @@ public class dlgFijo extends javax.swing.JDialog {
             }
         });
 
+        txtX2.setText("0");
         txtX2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtX2ActionPerformed(evt);
@@ -89,6 +92,7 @@ public class dlgFijo extends javax.swing.JDialog {
             }
         });
 
+        txtX3.setText("0");
         txtX3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtX3ActionPerformed(evt);
@@ -209,6 +213,8 @@ public class dlgFijo extends javax.swing.JDialog {
 
     public void LimpiarJTextFields() {
         txtX1.setText("");
+        txtX2.setText("");
+        txtX3.setText("");
         txtError.setText("");
         //txtIteracion.setText("");
 

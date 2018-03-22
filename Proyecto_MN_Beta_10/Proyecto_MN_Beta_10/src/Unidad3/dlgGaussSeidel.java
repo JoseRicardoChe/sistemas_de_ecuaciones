@@ -1,16 +1,17 @@
 package Unidad3;
 
+import Unidad2.frmPrincipal;
 import others.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /* @author Eduardo Emanuel Un suaste */
-public class dlgJacobi extends javax.swing.JFrame {
+public class dlgGaussSeidel extends javax.swing.JFrame {
 
     /**
      * Creates new form dlgJacobi
      */
-    public dlgJacobi() {
+    public dlgGaussSeidel() {
         initComponents();
     }
 
@@ -28,9 +29,9 @@ public class dlgJacobi extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        limpiar = new javax.swing.JButton();
-        txtErrorCalculado = new javax.swing.JTextField();
+        Limpiar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        txtErrorCalculado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,20 +92,20 @@ public class dlgJacobi extends javax.swing.JFrame {
 
         jLabel2.setText("Resta de Xk - Xk-1");
 
-        limpiar.setText("Limpiar");
-        limpiar.addActionListener(new java.awt.event.ActionListener() {
+        Limpiar.setText("Limpiar");
+        Limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limpiarActionPerformed(evt);
+                LimpiarActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Error Calculado");
 
         txtErrorCalculado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtErrorCalculadoActionPerformed(evt);
             }
         });
-
-        jLabel4.setText("Error Calculado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,11 +114,15 @@ public class dlgJacobi extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 793, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtX0, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,16 +130,15 @@ public class dlgJacobi extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton1)
                         .addGap(18, 18, 18)
-                        .addComponent(limpiar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtErrorCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                        .addComponent(txtErrorCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                        .addComponent(Limpiar)
+                        .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,10 +149,11 @@ public class dlgJacobi extends javax.swing.JFrame {
                     .addComponent(txtX0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(limpiar)
-                    .addComponent(txtErrorCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtErrorCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(Limpiar)
+                        .addComponent(jButton1)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -166,32 +171,29 @@ public class dlgJacobi extends javax.swing.JFrame {
     }//GEN-LAST:event_txtX0ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //capturar el error del cuando los numeros estan vacios con try cache
-        try {
-            double er = Double.parseDouble(this.txtError.getText().trim());
-            double x = Double.parseDouble(this.txtX0.getText().trim());
+         try {
+        double er = Double.parseDouble(this.txtError.getText().trim());
+        double x = Double.parseDouble(this.txtX0.getText().trim());
 
-            csMetodoJacobi me = new csMetodoJacobi();
-            //TABLA 1
-            ArrayList<csFilaJacobi> o = me.Jacobi(x, x, x, x, er);
-            mtJacobi m = new mtJacobi(o);
-            this.jtTablaNew.setModel(m);
-            //TABLA 2
-            ArrayList<csFilaJacobi> E = me.Jacobi(x, x, x, x, er);
-            mtjacobi2 n = new mtjacobi2(E);
-            this.Tabla1.setModel(n);
+        csMetodoSeidel me = new csMetodoSeidel();
+        //TABLA 1
+        ArrayList<csFilaSeidel> o = me.Seidel(x, x, x, x, er);
+        mtSeidel m = new mtSeidel(o);
+        this.jtTablaNew.setModel(m);
+        //TABLA 2
+        ArrayList<csFilaSeidel> E = me.Seidel(x, x, x, x, er);
+        mtSeidel2 n = new mtSeidel2(E);
+        this.Tabla1.setModel(n);
 
-            /*ArrayList<csFilaJacobi> e=me.Jacobi(er);
+        /*ArrayList<csFilaJacobi> e=me.Jacobi(er);
         mtjacobi2 n=new mtjacobi2(e);
         this.Tabla1.setModel(n);*/
-            // csFilaJacobi s = new csFilaJacobi();
-            //this.txtErrorRest.setText(Double.toString(s.getError()));
-            this.txtErrorCalculado.setText(me.e());
+        // csFilaSeidel s = new csFilaSeidel();
+        // this.txtErrorRest.setText(Double.toString(s.getError()));
+        this.txtErrorCalculado.setText(me.e());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero invalido: " + e.getMessage());
         }
-
-
     }//GEN-LAST:event_jButton1ActionPerformed
     public void LimpiarJTextFields() {
         txtError.setText("");
@@ -200,24 +202,13 @@ public class dlgJacobi extends javax.swing.JFrame {
         //txtIteracion.setText("");
 
     }
-
-
     private void txtErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtErrorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtErrorActionPerformed
 
-    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
+    private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
         LimpiarJTextFields();
-    }//GEN-LAST:event_limpiarActionPerformed
-
-    private void txtErrorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtErrorKeyTyped
-        //error permite numero decimales tanto enteros y no permite letras
-        if ((int) evt.getKeyChar() != 46 && (int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
-            getToolkit().beep();
-            evt.consume();
-            JOptionPane.showMessageDialog(this, "Error: Solo se permite numeros y punto.");
-        }
-    }//GEN-LAST:event_txtErrorKeyTyped
+    }//GEN-LAST:event_LimpiarActionPerformed
 
     private void txtX0KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtX0KeyTyped
         if ((int) evt.getKeyChar() != 45 && (int) evt.getKeyChar() != 46 && (int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
@@ -227,6 +218,14 @@ public class dlgJacobi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtX0KeyTyped
 
+    private void txtErrorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtErrorKeyTyped
+        if ((int) evt.getKeyChar() != 46 && (int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Error: Solo se permite numeros y punto.");
+        }
+    }//GEN-LAST:event_txtErrorKeyTyped
+
     private void txtErrorCalculadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtErrorCalculadoActionPerformed
 
     }//GEN-LAST:event_txtErrorCalculadoActionPerformed
@@ -235,39 +234,18 @@ public class dlgJacobi extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dlgJacobi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dlgJacobi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dlgJacobi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dlgJacobi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dlgJacobi().setVisible(true);
+                new dlgGaussSeidel().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Limpiar;
     private javax.swing.JTable Tabla1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -277,7 +255,6 @@ public class dlgJacobi extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jtTablaNew;
-    private javax.swing.JButton limpiar;
     private javax.swing.JTextField txtError;
     private javax.swing.JTextField txtErrorCalculado;
     private javax.swing.JTextField txtX0;

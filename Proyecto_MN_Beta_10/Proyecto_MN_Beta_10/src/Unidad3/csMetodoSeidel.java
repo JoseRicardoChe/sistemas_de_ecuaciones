@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 //import javax.swing.JOptionPane;
 
-public class csMetodoJacobi {
+public class csMetodoSeidel {
 
-    public ArrayList<csFilaJacobi> Jacobi(double x1, double x2, double x3, double x4, double errorDeseado) {
+    public ArrayList<csFilaSeidel> Seidel(double x1, double x2, double x3, double x4, double errorDeseado) {
 
         double Error;
         double AnteriorX1 = x1;
         double AnteriorX2 = x2;
         double AnteriorX3 = x3;
         double AnteriorX4 = x4;
-        
-        ArrayList<csFilaJacobi> lista;
+
+        ArrayList<csFilaSeidel> lista;
         int i = 1;
-        lista = new ArrayList<csFilaJacobi>();
+        lista = new ArrayList<csFilaSeidel>();
         do {
-            csFilaJacobi fila = new csFilaJacobi();
+            csFilaSeidel fila = new csFilaSeidel();
             //Calculo de la primera iteración
             fila.setX1(this.forx1(AnteriorX2, AnteriorX3));
-            //System.out.println("despues del setX1: "+fila.getX1());
-            //System.out.println("Anterior: "+AnteriorX1);
-            fila.setX2(this.forx2(AnteriorX1, AnteriorX3, AnteriorX4));
-            fila.setX3(this.forx3(AnteriorX1, AnteriorX2, AnteriorX4));
-            fila.setX4(this.forx4(AnteriorX2, AnteriorX3));
+           
+            fila.setX2(this.forx2(fila.getX1(), AnteriorX3, AnteriorX4));
+            System.out.println("gerX2"+fila.getX2() );
+            fila.setX3(this.forx3(fila.getX1(), fila.getX2(), AnteriorX4));
+            fila.setX4(this.forx4(fila.getX2(), fila.getRestX3()));
 
             //Resta de Xk - Xk-1 osea la ultima menos la antepenultima            
             double RestX1, RestX2, RestX3, RestX4;
@@ -67,36 +67,28 @@ public class csMetodoJacobi {
             System.out.println("max de la ultima " + maxXk);
 
             Error = maxRest / maxXk;
-            
-            a.setError(Error);
-            
             System.out.println("error final " + Error);
             System.out.println();
             // fila.setRestAbs(Error);
-            fila.setK(i++);
             lista.add(fila);
-            
+            fila.setK(i++);
+            a.setError(Error);
 
             System.out.println("****fin iteración***** ");
         } while (errorDeseado <= Error);
         
         /*if (errorDeseado >= Error) {
-            
-                JOptionPane.showMessageDialog(null, "Se ha encontrado el error " + errorDeseado+
-                        " de: " + a.getError()); 
-            
-       
+            JOptionPane.showMessageDialog(null, "Se ha encontrado el error " + errorDeseado);
         } else {
             JOptionPane.showMessageDialog(null, "No se ha encontrado el error " + errorDeseado);
         }*/
         //JOptionPane.showMessageDialog(null, Error);
         return lista;
     }
-    csFilaJacobi a = new csFilaJacobi();
+    csFilaSeidel a = new csFilaSeidel();
     public String e (){
         return String.valueOf(a.getError());
     }
-    
     public double forx1(double X2, double X3) {
         //Primera formula
         return (6 + X2 - 2 * X3) / 10;
@@ -114,7 +106,7 @@ public class csMetodoJacobi {
 
     public double forx4(double X2, double X3) {
         //Primera formula
-        return (15 - 3 * X2 + 3 * X3) / 8;
+        return (15 - 3 * X2 +  X3) / 8;
     }
 
 }
