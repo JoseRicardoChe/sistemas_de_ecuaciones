@@ -32,7 +32,8 @@ public class dlgJacobi extends javax.swing.JFrame {
         txtErrorCalculado = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Método de Jacobi");
 
         jLabel1.setText("X(0)");
 
@@ -62,6 +63,8 @@ public class dlgJacobi extends javax.swing.JFrame {
             }
         });
 
+        jtTablaNew.setBackground(new java.awt.Color(0, 0, 0));
+        jtTablaNew.setForeground(new java.awt.Color(255, 255, 0));
         jtTablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
@@ -79,6 +82,8 @@ public class dlgJacobi extends javax.swing.JFrame {
             }
         });
 
+        Tabla1.setBackground(new java.awt.Color(0, 0, 0));
+        Tabla1.setForeground(new java.awt.Color(255, 255, 0));
         Tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}

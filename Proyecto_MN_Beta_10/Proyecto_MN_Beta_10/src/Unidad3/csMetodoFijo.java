@@ -36,9 +36,10 @@ public class csMetodoFijo {
             fila.setIte(i++);
         } while (Error > errorDeseado);
         if (Error > errorDeseado) {
-            JOptionPane.showMessageDialog(null, "No se ha encontrado una raiz que sea igual o menor a " + errorDeseado);
+            JOptionPane.showMessageDialog(null, "No se ha encontrado un error igual o menor a " + errorDeseado);
         } else {
-            JOptionPane.showMessageDialog(null, "Se ha encontrado una raiz igual o menor a " + errorDeseado);
+            JOptionPane.showMessageDialog(null, "Se ha encontrado un error igual o menor a " + errorDeseado +
+                    "\nValor calculado: " + Error);
         }
         return lista;
     }

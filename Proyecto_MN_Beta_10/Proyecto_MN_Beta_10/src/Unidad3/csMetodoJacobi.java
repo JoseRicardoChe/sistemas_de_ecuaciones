@@ -103,17 +103,17 @@ public class csMetodoJacobi {
     }
 
     public double forx2(double X1, double X3, double X4) {
-        //Primera formula
-        return (25 + X1 + X3 - 3 * X4) / 11;
+        //Segunda formula
+        return (25 + X1 * X3 - 3 * X4) / 11;
     }
 
     public double forx3(double X1, double X2, double X4) {
-        //Primera formula
+        //tercera formula
         return (-11 - 2 * X1 + X2 + X4) / 10;
     }
 
     public double forx4(double X2, double X3) {
-        //Primera formula
+        //Cuarta formula
         return (15 - 3 * X2 + 3 * X3) / 8;
     }
 

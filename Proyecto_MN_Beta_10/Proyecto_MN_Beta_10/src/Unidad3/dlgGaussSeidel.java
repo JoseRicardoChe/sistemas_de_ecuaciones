@@ -33,7 +33,8 @@ public class dlgGaussSeidel extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtErrorCalculado = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Método de Gaus Seidel");
 
         jLabel1.setText("X(0)");
 
@@ -63,6 +64,8 @@ public class dlgGaussSeidel extends javax.swing.JFrame {
             }
         });
 
+        jtTablaNew.setBackground(new java.awt.Color(0, 0, 0));
+        jtTablaNew.setForeground(new java.awt.Color(102, 255, 0));
         jtTablaNew.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
@@ -80,6 +83,8 @@ public class dlgGaussSeidel extends javax.swing.JFrame {
             }
         });
 
+        Tabla1.setBackground(new java.awt.Color(0, 0, 0));
+        Tabla1.setForeground(new java.awt.Color(102, 255, 0));
         Tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
@@ -144,16 +149,17 @@ public class dlgGaussSeidel extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtX0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtErrorCalculado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)
                         .addComponent(Limpiar)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(txtX0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
