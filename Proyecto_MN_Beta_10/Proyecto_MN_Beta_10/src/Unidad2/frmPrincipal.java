@@ -3,11 +3,11 @@ package Unidad2;
 import Unidad3.dlgFijo;
 import Unidad3.dlgGaussSeidel;
 import Unidad3.dlgJacobi;
+import Unidad4.dlgTrapecio;
+import Unidad4.dlgTercio;
 
- 
 public class frmPrincipal extends javax.swing.JFrame {
 
-   
     public frmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -23,7 +23,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btSalir = new javax.swing.JButton();
         mnbPestanas = new javax.swing.JMenuBar();
         mnOpciones = new javax.swing.JMenu();
         smnuPuntoFijo = new javax.swing.JMenuItem();
@@ -34,13 +34,16 @@ public class frmPrincipal extends javax.swing.JFrame {
         jmiJacobbi = new javax.swing.JMenuItem();
         jmiPuntoFijo = new javax.swing.JMenuItem();
         Gauss = new javax.swing.JMenuItem();
+        mnOpcionesInte = new javax.swing.JMenu();
+        jmTrapecio = new javax.swing.JMenuItem();
+        jmTercio = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btSalir.setText("Salir");
+        btSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btSalirActionPerformed(evt);
             }
         });
 
@@ -108,6 +111,26 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         mnbPestanas.add(mnOpcionesEcu);
 
+        mnOpcionesInte.setText("Integración Númerica");
+
+        jmTrapecio.setText("Regla del Trapecio");
+        jmTrapecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmTrapecioActionPerformed(evt);
+            }
+        });
+        mnOpcionesInte.add(jmTrapecio);
+
+        jmTercio.setText("Regla del 1/3 de Simpson");
+        jmTercio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmTercioActionPerformed(evt);
+            }
+        });
+        mnOpcionesInte.add(jmTercio);
+
+        mnbPestanas.add(mnOpcionesInte);
+
         setJMenuBar(mnbPestanas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,14 +139,14 @@ public class frmPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(317, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(243, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btSalir)
                 .addContainerGap())
         );
 
@@ -131,34 +154,33 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void smnuBiseccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnuBiseccionActionPerformed
-
-        dlgBiseccion biseccion = new dlgBiseccion(this,true);
+        dlgBiseccion biseccion = new dlgBiseccion(this, true);
         biseccion.setLocationRelativeTo(null);
         biseccion.setVisible(true);
-        
+
     }//GEN-LAST:event_smnuBiseccionActionPerformed
 
     private void smnuPuntoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnuPuntoFijoActionPerformed
-        dlgFijo punto = new dlgFijo(this,true);
+        dlgFijo punto = new dlgFijo(this, true);
         punto.setLocationRelativeTo(null);
         punto.setVisible(true);
     }//GEN-LAST:event_smnuPuntoFijoActionPerformed
 
     private void smnuSecanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnuSecanteActionPerformed
-        dlgSecante secante = new dlgSecante(this,true);
+        dlgSecante secante = new dlgSecante(this, true);
         secante.setLocationRelativeTo(null);
         secante.setVisible(true);
     }//GEN-LAST:event_smnuSecanteActionPerformed
 
     private void smnuNewtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smnuNewtonActionPerformed
-        dlgNewton newton = new dlgNewton(this,true);
+        dlgNewton newton = new dlgNewton(this, true);
         newton.setLocationRelativeTo(null);
         newton.setVisible(true);
     }//GEN-LAST:event_smnuNewtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btSalirActionPerformed
 
     private void jmiJacobbiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiJacobbiActionPerformed
         dlgJacobi x = new dlgJacobi();
@@ -167,16 +189,28 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiJacobbiActionPerformed
 
     private void jmiPuntoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPuntoFijoActionPerformed
-        dlgFijo y = new dlgFijo(this,true);
+        dlgFijo y = new dlgFijo(this, true);
         y.setLocationRelativeTo(null);
         y.setVisible(true);
     }//GEN-LAST:event_jmiPuntoFijoActionPerformed
 
     private void GaussActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GaussActionPerformed
-    dlgGaussSeidel y = new dlgGaussSeidel();
+        dlgGaussSeidel y = new dlgGaussSeidel();
         y.setLocationRelativeTo(null);
         y.setVisible(true);
     }//GEN-LAST:event_GaussActionPerformed
+
+    private void jmTrapecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmTrapecioActionPerformed
+        dlgTrapecio q = new dlgTrapecio();
+        q.setLocationRelativeTo(null);
+        q.setVisible(true);
+    }//GEN-LAST:event_jmTrapecioActionPerformed
+
+    private void jmTercioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmTercioActionPerformed
+        dlgTercio u = new dlgTercio();
+        u.setLocationRelativeTo(null);
+        u.setVisible(true);
+    }//GEN-LAST:event_jmTercioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,17 +250,19 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Gauss;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btSalir;
+    private javax.swing.JMenuItem jmTercio;
+    private javax.swing.JMenuItem jmTrapecio;
     private javax.swing.JMenuItem jmiJacobbi;
     private javax.swing.JMenuItem jmiPuntoFijo;
     private javax.swing.JMenu mnOpciones;
     private javax.swing.JMenu mnOpcionesEcu;
+    private javax.swing.JMenu mnOpcionesInte;
     private javax.swing.JMenuBar mnbPestanas;
     private javax.swing.JMenuItem smnuBiseccion;
     private javax.swing.JMenuItem smnuNewton;
     private javax.swing.JMenuItem smnuPuntoFijo;
     private javax.swing.JMenuItem smnuSecante;
     // End of variables declaration//GEN-END:variables
-
 
 }
