@@ -178,7 +178,7 @@ public class dlgLang extends javax.swing.JFrame {
         
         try {
             int f = Integer.parseInt(this.txtX.getText().trim());
-            int N = Integer.parseInt(this.txtCx.getText().trim());     
+            double N = Double.parseDouble(this.txtCx.getText().trim());     
             csMetodoLang me = new csMetodoLang();     
             ArrayList<csFilaLang> o = me.Lang(f);
             mtLang m = new mtLang(o);
@@ -204,10 +204,10 @@ public class dlgLang extends javax.swing.JFrame {
     }//GEN-LAST:event_btLimpiarActionPerformed
 
     private void txtXKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtXKeyTyped
-        if ((int) evt.getKeyChar() != 45 && (int) evt.getKeyChar() != 46 && (int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
+        if ((int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(this, "Error: Solo se permite numeros y punto.");
+            JOptionPane.showMessageDialog(this, "Error: Solo se permite numeros.");
         }
     }//GEN-LAST:event_txtXKeyTyped
 
@@ -220,10 +220,11 @@ public class dlgLang extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCxActionPerformed
 
     private void txtCxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCxKeyTyped
-        if ((int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
+        
+        if ((int) evt.getKeyChar() != 45 && (int) evt.getKeyChar() != 46 && (int) evt.getKeyChar() != 8 != ((int) evt.getKeyChar() >= 48 && (int) evt.getKeyChar() <= 57)) {
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(this, "Error: Solo se permite numeros.");
+            JOptionPane.showMessageDialog(this, "Error: Solo se permite numeros y punto.");
         }
     }//GEN-LAST:event_txtCxKeyTyped
 

@@ -3,16 +3,16 @@ package Unidad5;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-public class mtLang extends AbstractTableModel {
+public class mtNew extends AbstractTableModel {
 
-    private String[] columnas = {"i", "x", "y"};
-    private ArrayList<csFilaLang> lista;
+    private String[] columnas = {"i", "x", "f(x)"};
+    private ArrayList<csFilaNew> lista;
 
-    public mtLang(ArrayList<csFilaLang> lista) {
+    public mtNew(ArrayList<csFilaNew> lista) {
         this.lista = lista;
     }
 
-    public mtLang() {
+    public mtNew() {
 
     }
 

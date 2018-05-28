@@ -5,7 +5,7 @@ import Unidad3.dlgGaussSeidel;
 import Unidad3.dlgJacobi;
 import Unidad4.dlgTrapecio;
 import Unidad4.dlgTercio;
-import Unidad5.Newton1;
+import Unidad5.dlgNew;
 import Unidad5.dlgLang;
 
 public class frmPrincipal extends javax.swing.JFrame {
@@ -247,7 +247,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Newton1 u = new Newton1();
+        dlgNew u = new dlgNew();
         u.setLocationRelativeTo(null);
         u.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
